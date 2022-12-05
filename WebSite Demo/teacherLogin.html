@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>教务系统-主界面</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" rel="styleSheet"  href="css/res.css" />
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* 头部样式 */
+.header {
+  background-color: #f1f1f1;
+
+  height: 90px;
+  display: flex;
+
+  align-items: center;
+}
+
+/* 导航条 */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+ 
+/* 导航链接 */
+.topnav a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 40px;
+  text-decoration: none;
+  transition: 500ms all;
+}
+ 
+/* 链接 - 修改颜色 */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.column {
+  float: left;
+  padding: 35px;
+}
+
+.footer {
+  background-color:rgba(0,0,0,.5);
+  position:fixed; 
+  bottom: 0; 
+  left: 0;
+  height: 6%;
+  width: 100%;
+  text-align: center;
+}
+
+#photo{
+  top: 25%;
+  left: 5%;
+  width: auto;
+  height: auto;
+  position: fixed;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="header">
+    <span style='font-size:45px;'>&#128214;</span>
+    <h1 style="color:black;display: inline-block;">教务管理系统</h1>
+</div>
+
+<div class="topnav">
+<a href="main.html">返回首页</a>
+  <a href="res.html">注册</a>
+</div>
+
+
+<div>
+
+  <div class="grid">
+
+    <form action="index_teacher.html" method="post" class="form login">
+
+      <header class="login__header">
+        <h3 class="login__title">教务管理:教师入口</h3>
+      </header>
+
+      <div class="login__body">
+
+        <div class="form__field">
+          <input type="username" placeholder="用户名" required>
+        </div>
+
+        <div class="form__field">
+          <input type="password" placeholder="密码" required>
+        </div>
+
+      </div>
+
+      <footer class="login__footer">
+        <input type="submit" value="登录">
+
+        <p><span class="icon icon--info">?</span><a href="forgetpassword.html">忘记密码</a></p>
+      </footer>
+
+    </form>
+
+  </div>
+
+
+<div class="footer">
+    <p style="display: inline-block;color:white;">Copyright ©  2022 YOUChanWill</p>
+  </div>
+
+</body>
+</html>

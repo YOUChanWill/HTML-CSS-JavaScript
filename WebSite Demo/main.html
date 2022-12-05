@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>教务系统-主界面</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" rel="styleSheet"  href="css/login.css" />
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* 头部样式 */
+.header {
+  background-color: #f1f1f1;
+
+  height: 90px;
+  display: flex;
+
+  align-items: center;
+}
+
+/* 导航条 */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+ 
+/* 导航链接 */
+.topnav a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 40px;
+  text-decoration: none;
+  transition: 500ms all;
+}
+ 
+/* 链接 - 修改颜色 */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.column {
+  float: left;
+  padding: 35px;
+}
+
+.footer {
+  background-color:rgba(0,0,0,.5);
+  position:fixed; 
+  bottom: 0; 
+  left: 0;
+  height: 6%;
+  width: 100%;
+  text-align: center;
+}
+
+.box {
+            width: 863px;
+            height: 502px;
+            border: 1px solid #ccc;
+            margin-top: 35px;
+            margin-left: 50px;
+            padding: 5px;
+            float: left;
+ 
+        }
+        .inner{
+            width: 850px;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+        .inner img{
+            width: 850px;
+            height: 490px;
+            vertical-align: top
+        }
+        ul {
+            width: 1000%;
+            position: absolute;
+            list-style: none;
+            left:0;
+            top: 0;
+        }
+        .inner li{
+            float: left;
+ 
+        }
+ 
+        ol {
+            position: absolute;
+            height: 20px;
+            right: 20px;
+            bottom: 30px;
+            text-align: center;
+            padding: 5px;
+        }
+        ol li{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            background-color: #fff;
+            margin: 5px;
+            cursor: pointer;
+ 
+        }
+        ol .current{
+            background-color: rgb(172, 168, 168);
+        }
+        #arr{
+            display: none;
+        }
+        #arr span{
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            margin-top: -20px;
+            background: #fff;
+            cursor: pointer;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-family: '黑体';
+            font-size: 30px;
+            color: #000;
+            opacity: 0.5;
+            border: 1px solid #fff;
+        }
+        #arr #right {
+            right: 5px;
+            left: auto;
+        }
+
+</style>
+
+
+</head>
+<body>
+
+<div class="header">
+    <span style='font-size:45px;'>&#128214;</span>
+    <h1 style="color:black;display: inline-block;">教务管理系统</h1>
+</div>
+
+<div class="topnav">
+  <a href="res.html">注册</a>
+  <a href="teacherLogin.html">教师入口</a>
+</div>
+
+
+<div class="box" id="box">
+  <div class="inner">
+      <!--轮播图-->
+      <ul>
+          <li><a href="#"><img src="photo/1.jpg" alt=""></a></li>
+          <li><a href="#"><img src="photo/2.jpg" alt=""></a></li>
+          <li><a href="#"><img src="photo/3.jpg" alt=""></a></li>
+          <li><a href="#"><img src="photo/4.jpg" alt=""></a></li>
+          <li><a href="#"><img src="photo/5.jpg" alt=""></a></li>
+
+      </ul>
+
+      <ol class="bar">
+
+      </ol>
+      <!--左右焦点-->
+      <div id="arr">
+                  <span id="left">
+                      <
+                  </span>
+          <span id="right">
+                      >
+                  </span>
+      </div>
+
+  </div>
+</div>
+<script>
+  /**
+   * @param id  传入元素的id
+   * @returns {HTMLElement | null}  返回标签对象，方便获取元素
+   */
+  function my$(id) {
+      return document.getElementById(id);
+  }
+
+  //获取各元素，方便操作
+  var box=my$("box");
+  var inner=box.children[0];
+  var ulObj=inner.children[0];
+  var list=ulObj.children;
+  var olObj=inner.children[1];
+  var arr=my$("arr");
+  var imgWidth=inner.offsetWidth;
+  var right=my$("right");
+  var pic=0;
+
+  //根据li个数，创建小按钮
+  for(var i=0;i<list.length;i++){
+      var liObj=document.createElement("li");
+
+      olObj.appendChild(liObj);
+      liObj.innerText=(i+1);
+      liObj.setAttribute("index",i);
+
+      liObj.onmouseover=function () { //在鼠标指针移动到指定的对象上时触发事件发生,为按钮设定mouseover
+  
+          for (var j=0;j<olObj.children.length;j++){
+              olObj.children[j].removeAttribute("class");//清除所有按钮的样式
+          }
+          this.className="current";
+          pic=this.getAttribute("index");
+          animate(ulObj,-pic*imgWidth);
+      }
+  }
+
+  //设置ol中第一个li有背景颜色
+  olObj.children[0].className = "current";
+
+  ulObj.appendChild(ulObj.children[0].cloneNode(true));  //克隆一个ul中第一个li,加入到ul中的最后一一克隆
+
+  var timeId=setInterval(onmouseclickHandle,3000); //setInterval是一个实现定时调用的函数,用于设置跳转时间
+
+  //左右焦点实现点击切换图片功能
+  box.onmouseover=function () {
+      arr.style.display="block";
+      clearInterval(timeId);
+  };
+  box.onmouseout=function () {
+      arr.style.display="none";
+      timeId=setInterval(onmouseclickHandle,3000); //setInterval
+  };
+
+  right.onclick=onmouseclickHandle;
+  function onmouseclickHandle() {
+      //如果pic的值是5,恰巧是ul中li的个数-1的值,此时页面显示第六个图片,而用户会认为这是第一个图,所以,如果用户再次点击按钮,用户应该看到第二个图片
+      if (pic == list.length - 1) {
+          //从第6个图,跳转到第一个图
+          pic = 0;//先设置pic=0
+          ulObj.style.left = 0 + "px";//把ul的位置还原成开始的默认位置
+      }
+      pic++;//立刻设置pic加1,那么此时用户就会看到第二个图片了
+      animate(ulObj, -pic * imgWidth);//pic从0的值加1之后,pic的值是1,然后ul移动出去一个图片
+      //如果pic==5说明,此时显示第6个图(内容是第一张图片),第一个小按钮有颜色,
+      if (pic == list.length - 1) {
+          //第五个按钮颜色恢复默认
+          olObj.children[olObj.children.length - 1].className = "";
+          //第一个按钮颜色设置上
+          olObj.children[0].className = "current";
+      } else {
+          //恢复所有的小按钮的背景颜色
+          for (var i = 0; i < olObj.children.length; i++) {
+              olObj.children[i].removeAttribute("class");
+          }
+          olObj.children[pic].className = "current";
+      }
+  }
+  left.onclick=function () {
+      if (pic==0){
+          pic=list.length-1;
+          ulObj.style.left=-pic*imgWidth+"px";
+      }
+      pic--;
+      animate(ulObj,-pic*imgWidth);
+      for (var i = 0; i < olObj.children.length; i++) {
+          olObj.children[i].removeAttribute("class");
+      }
+      //当前的pic索引对应的按钮设置颜色
+      olObj.children[pic].className = "current";
+  };
+
+  //设置任意的一个元素,移动到指定的目标位置
+  function animate(element, target) {
+      clearInterval(element.timeId);
+      //定时器的id值存储到对象的一个属性中
+      element.timeId = setInterval(function () {
+          //获取元素的当前的位置,数字类型
+          var current = element.offsetLeft;
+          //每次移动的距离
+          var step = 10;
+          step = current < target ? step : -step;
+          //当前移动到位置
+          current += step;
+          if (Math.abs(current - target) > Math.abs(step)) {
+              element.style.left = current + "px";
+          } else {
+              //清理定时器
+              clearInterval(element.timeId);
+              //直接到达目标
+              element.style.left = target + "px";
+          }
+      }, 10);
+  }
+</script>
+
+
+  <div class="grid">
+
+    <form action="index_student.html" method="post" class="form login">
+
+      <header class="login__header">
+        <h3 class="login__title">教务管理系统</h3>
+      </header>
+
+      <div class="login__body">
+
+        <div class="form__field">
+          <input type="username" placeholder="用户名" required>
+        </div>
+
+        <div class="form__field">
+          <input type="password" placeholder="密码" required>
+        </div>
+
+      </div>
+
+      <footer class="login__footer">
+        <input type="submit" value="登录">
+
+        <p><span class="icon icon--info">?</span><a href="forgetpassword.html">忘记密码</a></p>
+      </footer>
+
+    </form>
+
+  </div>
+
+
+<div class="footer">
+    <p style="display: inline-block;color:white;margin-top: 16px;">Copyright ©  2022 YOUChanWill</p>
+  </div>
+
+</body>
+</html>

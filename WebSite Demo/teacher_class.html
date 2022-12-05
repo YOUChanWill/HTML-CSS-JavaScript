@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>教师界面-课程信息</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" rel="styleSheet"  href="css/teacher_info.css" />
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* 头部样式 */
+.header {
+  background-color: #f1f1f1;
+
+  height: 90px;
+  display: flex;
+
+  align-items: center;
+}
+
+/* 导航条 */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+ 
+/* 导航链接 */
+.topnav a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 40px;
+  text-decoration: none;
+  transition: 500ms all;
+}
+ 
+/* 链接 - 修改颜色 */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.column {
+  float: left;
+  padding: 30px 60px;
+}
+
+.footer {
+  background-color:rgba(0,0,0,.5);
+  position:fixed; 
+  bottom: 0; 
+  left: 0;
+  height: 6%;
+  width: 100%;
+  text-align: center;
+}
+
+.searchform{
+  position: relative;
+  padding-top: 30px;
+  padding-left:345px;
+  padding-bottom: 20px;
+
+}
+
+</style>
+</head>
+<body>
+
+
+<div class="header">
+    <span style='font-size:45px;'>&#128214;</span>
+    <h1 style="color:black;display: inline-block;">教务管理系统</h1>
+</div>
+
+<div class="topnav">
+  <a href="main.html">退出登录</a>
+  <a href="teacher_choices.html">选课信息</a>
+  <a href="teacher_class.html">学生课程</a>
+  <a href="teacher_info.html">学生信息</a>
+</div>
+
+
+<div class="searchform">
+  <form>
+    所在分院：<select name="classid" style="width:150px;height: 26px;margin-right: 15px;">
+      <option value="计算机学院">计算机学院</option>
+      <option value="经管学院">经管学院</option>
+      <option value="机械工程学院">机械工程学院</option>
+      <option value="电子信息学院">电子信息学院</option>
+
+      </select>
+
+    所在专业：<select name="classname" style="width:150px;height: 26px;margin-right: 15px;">
+      <option value="32580">软件工程</option>
+      <option value="32581">计算机科学与技术</option>
+      </select>
+
+      年级：<select name="classname" style="width:150px;height: 26px;margin-right: 15px;">
+        <option value="2022">2022</option>
+        <option value="2021">2021</option>
+        <option value="2020">2020</option>
+        <option value="2019">2019</option>
+        </select>
+
+      <input type="submit" value="查询" style="width:100px;height: 26px;margin-left: 15px;">
+
+  </form>
+</div>
+
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>星期一</th>
+      <th>星期二</th>
+      <th>星期三</th>
+      <th>星期四</th>
+      <th>星期五</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>8:20-9:05</strong></td>
+      <td></td>
+      <td rowspan="3">数据结构与算法</td>
+      <td rowspan="2">软件工程</td>
+      <td></td>
+      <td rowspan="3">数据库原理实践</td>
+    </tr>
+    <tr >
+      <td><strong>9:10-9:55</strong></td>
+      <td rowspan="3">离散数学</td>
+      <td rowspan="4">JSP项目实践</td>
+    </tr>
+    <tr>
+      <td><strong>10:05-10:50</strong></td>
+      <td rowspan="2">计算机组成原理</td>
+
+    </tr>
+    <tr>
+      <td><strong>10:55-11:40</strong></td>
+      <td rowspan="2" >Java程序设计</td>
+    </tr>					
+    <tr>
+      <td><strong>11:45-12:30</strong></td>
+
+    </tr>
+    <tr>
+      <td><strong>13:30-14:15</strong></td>
+      <td rowspan="2">数据库原理</td>
+      <td rowspan="4">Java程序设计</td>
+      <td></td>
+      <td rowspan="2">网页设计</td>
+    </tr>
+    <tr>
+      <td><strong>14:20-15:05</strong></td>
+      <td rowspan="3">C++程序设计</td>
+    </tr>
+    <tr>
+      <td><strong>15:10-15:55</strong></td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+
+<div class="footer">
+    <p style="display: inline-block;color:white;">Copyright ©  2022 YOUChanWill</p>
+  </div>
+
+</body>
+</html>

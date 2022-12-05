@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>教务系统-教师界面</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* 头部样式 */
+.header {
+  background-color: #f1f1f1;
+
+  height: 90px;
+  display: flex;
+
+  align-items: center;
+}
+
+/* 导航条 */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+ 
+/* 导航链接 */
+.topnav a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 40px;
+  text-decoration: none;
+  transition: 500ms all;
+}
+ 
+/* 链接 - 修改颜色 */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.column {
+  float: left;
+  padding: 30px 60px;
+}
+
+.footer {
+  background-color:rgba(0,0,0,.5);
+  position:fixed; 
+  bottom: 0; 
+  left: 0;
+  height: 6%;
+  width: 100%;
+  text-align: center;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="header">
+    <span style='font-size:45px;'>&#128214;</span>
+    <h1 style="color:black;display: inline-block;">教务管理系统</h1>
+</div>
+
+<div class="topnav">
+  <a href="main.html">退出登录</a>
+  <a href="teacher_choices.html">选课信息</a>
+  <a href="teacher_class.html">学生课程</a>
+  <a href="teacher_info.html">学生信息</a>
+</div>
+
+
+
+<div class="row">
+    <div class="column">
+      <h2>· 学生信息</h2>
+      <p>学生信息的相关查询，包括并不限于名字，入学时间，家庭住址，联系方式以及家庭住址等信息……仅仅显示当前注册在校的学生信息</p>
+    </div>
+    
+    <div class="column">
+      <h2>· 学生课程</h2>
+      <p>包含必修课程与之后的选修课程，包括相关上课时间与授课教室。查看学生的课程情况，包括培养计划中的必修课程与选修课程。</p>
+    </div>
+    
+    <div class="column">
+      <h2>· 学生选课情况</h2>
+      <p>查看学生的选课情况，看有课程的选修的查看情况。（专业主干课程、专业基础课程、大类平台课程、专业方向课程、专业拓展课程、实践类课程）</p>
+    </div>
+  </div>
+
+
+
+<div class="footer">
+    <p style="display: inline-block;color:white;">Copyright ©  2022 YOUChanWill</p>
+  </div>
+
+</body>
+</html>

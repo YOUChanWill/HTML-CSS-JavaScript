@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>学生界面-成绩查询</title>
+<link type="text/css" rel="styleSheet"  href="css/teacher_info.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* 头部样式 */
+.header {
+  background-color: #f1f1f1;
+
+  height: 90px;
+  display: flex;
+
+  align-items: center;
+}
+
+/* 导航条 */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+ 
+/* 导航链接 */
+.topnav a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 40px;
+  text-decoration: none;
+  transition: 500ms all;
+}
+ 
+/* 链接 - 修改颜色 */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.column {
+  float: left;
+  padding: 30px 60px;
+}
+
+.searchform{
+  position: relative;
+  padding-top: 30px;
+  padding-left:210px;
+  padding-bottom: 60px;
+
+}
+
+.searchtable{
+  overflow: auto;
+  position: relative;
+  height: 350px;
+  width: 1500px;
+  padding-top:2px;
+  padding-left: 60px;
+}
+
+.searchtable::-webkit-scrollbar {
+	border-width:1px;
+}
+
+.table01 *{
+  text-align: center;
+}
+
+
+.footer {
+  background-color:rgba(0,0,0,.5);
+  position:fixed; 
+  bottom: 0; 
+  left: 0;
+  height: 6%;
+  width: 100%;
+  text-align: center;
+}
+
+
+</style>
+</head>
+<body>
+
+<div class="header">
+    <span style='font-size:45px;'>&#128214;</span>
+    <h1 style="color:black;display: inline-block;">教务管理系统</h1>
+</div>
+
+<div class="topnav">
+  <a href="main.html">退出登录</a>
+  <a href="student_choices.html">选  课</a>
+  <a href="student_timetable.html">我的课表</a>
+  <a href="student_grades.html">学期成绩</a>
+</div>
+
+
+
+
+<div class="searchform">
+  <form>
+    学生编号：<input type="text" name="studentid" style="width:150px;height: 26px; margin-right: 15px">
+    学生姓名：<input type="text" name="studentname" style="width:150px;height: 26px; margin-right: 15px">
+
+    课程编号：<select name="classid" style="width:150px;height: 26px;margin-right: 15px;">
+      <option value="all">所有课程</option>
+      <option value="32580">32580</option>
+      <option value="32581">32581</option>
+      <option value="32582">32582</option>
+      <option value="32583">32583</option>
+      </select>
+
+    所在系别：<select name="classname" style="width:150px;height: 26px;margin-right: 15px;">
+      <option value="计算机学院">计算机学院</option>
+      <option value="经管学院">经管学院</option>
+      <option value="机械工程学院">机械工程学院</option>
+      <option value="电子信息学院">电子信息学院</option>
+      </select>
+
+      <input type="submit" value="查询" style="width:100px;height: 26px;margin-left: 15px;">
+
+  </form>
+</div>
+
+
+<div>
+  <div class="searchtable">
+
+    <table style="width:1100px;" class="table01">
+      <tbody>
+        <tr>
+          <th>学生编号</th>
+          <th>学生姓名</th>
+          <th>课程信息</th>
+          <th>平时成绩</th>
+          <th>考试成绩</th>
+        </tr>
+        <tr>
+          <td>14435128</td>
+          <td>张三</td>
+          <td>Java程序设计</td>
+          <td>98</td>
+          <td>85</td>
+        </tr>
+        <tr>
+          <td>14435128</td>
+          <td>张三</td>
+          <td>数据库基础</td>
+          <td>72</td>
+          <td>92</td>
+        </tr>
+        <tr>
+          <td>14435128</td>
+          <td>张三</td>
+          <td>网页设计</td>
+          <td>89</td>
+          <td>85</td>
+        </tr>
+        <tr>
+          <td>14435128</td>
+          <td>张三</td>
+          <td>网页设计</td>
+          <td>89</td>
+          <td>85</td>
+        </tr>
+        <tr>
+          <td>14435128</td>
+          <td>张三</td>
+          <td>网页设计</td>
+          <td>89</td>
+          <td>85</td>
+        </tr>
+        <tr>
+          <td>14435128</td>
+          <td>张三</td>
+          <td>网页设计</td>
+          <td>89</td>
+          <td>85</td>
+        </tr>
+
+        <tr>
+          <td>14435128</td>
+          <td>张三</td>
+          <td>网页设计</td>
+          <td>89</td>
+          <td>85</td>
+        </tr>
+        <tr>
+          <td>14435128</td>
+          <td>张三</td>
+          <td>网页设计</td>
+          <td>89</td>
+          <td>85</td>
+        </tr>
+        <tr>
+          <td>14435128</td>
+          <td>张三</td>
+          <td>网页设计</td>
+          <td>89</td>
+          <td>85</td>
+        </tr>
+        <tr>
+          <td>14435128</td>
+          <td>张三</td>
+          <td>网页设计</td>
+          <td>89</td>
+          <td>85</td>
+        </tr>
+        <tr>
+          <td>14435128</td>
+          <td>张三</td>
+          <td>网页设计</td>
+          <td>89</td>
+          <td>85</td>
+        </tr>
+        <tr>
+          <td>14435128</td>
+          <td>张三</td>
+          <td>数据库基础</td>
+          <td>72</td>
+          <td>92</td>
+        </tr>
+        <tr>
+          <td>14435128</td>
+          <td>张三</td>
+          <td>数据库基础</td>
+          <td>72</td>
+          <td>92</td>
+        </tr>
+        <tr>
+          <td>14435128</td>
+          <td>张三</td>
+          <td>数据库基础</td>
+          <td>72</td>
+          <td>92</td>
+        </tr>
+        <tr>
+          <td>14435128</td>
+          <td>张三</td>
+          <td>数据库基础</td>
+          <td>72</td>
+          <td>92</td>
+        </tr>
+        <tr>
+          <td>14435128</td>
+          <td>张三</td>
+          <td>数据库基础</td>
+          <td>72</td>
+          <td>92</td>
+        </tr>
+        <tr>
+          <td>14435128</td>
+          <td>张三</td>
+          <td>数据库基础</td>
+          <td>72</td>
+          <td>92</td>
+        </tr>
+      </tbody>
+      <colgroup>
+        <col style="width: 20%;">
+        <col style="width: 20%;">
+        <col style="width: 20%;">
+        <col style="width: 20%;">
+        <col style="width: 20%;">
+      </colgroup>
+    </table>
+
+
+  </div>
+
+</div>
+
+<div class="footer">
+    <p style="display: inline-block;color:white;">Copyright ©  2022 YOUChanWill</p>
+  </div>
+
+</body>
+</html>
